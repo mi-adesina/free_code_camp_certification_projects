@@ -1,0 +1,24 @@
+#border {
+  background-color: #e5e5e5;
+  margin: 30px auto;
+  border-radius: 5px;
+}
+
+body {
+  background-color: white;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 50px auto;
+}
+
+#image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}

@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-grey: #f5f6f7;
+  --light-blue: #7ec6d3;
+  --dark-blue: #1b1b32;
+  --orange: #f1be32;
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: var(--light-grey);
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  margin: 20px 0;
+}
+
+label {
+  padding: 12px;
+}
+
+input {
+  min-width: 200px;
+  min-height: 30px;
+}
+
+button {
+  background-color: var(--orange);
+  cursor: pointer;
+  border: none;
+  padding: 6px;
+  min-width: 120px;
+  border: 50px;
+  margin: 20px;
+}
+
+#register-container {
+  /* border: 2px solid black; */
+  width: 350px;
+  height: 400px;
+}
+
+#total {
+  width: 200px;
+  height: 50px;
+  margin-left: 50px;
+  padding-top: 5px;
+  text-align: center;
+  background-color: black;
+  font-weight: 900;
+  border: 10px solid var(--light-blue);
+}
+
+#register-neck {
+  width: 35px;
+  height: 30px;
+  margin-left: 70px;
+  border: 10px solid var(--light-blue);
+  background-color: var(--light-blue);
+
+}
+
+#register-body {
+  width: 350px;
+  height: 320px;
+  border: 10px solid var(--light-blue);
+  background-color: var(--light-blue);
+  border-radius: 30px 30px 0 0;
+}
+#drawer {
+  height: 250px;
+  width: 200px;
+  margin: 5px;
+  margin-left: auto;
+  padding: 10px;
+  background-color: var(--light-grey);
+  color: black;
+}
+.money {
+  font-size: 16px;
+  padding: 3px;
+}
+#hr {
+  width: 350px;
+  margin-left: -10px;
+  border: 5px solid var(--dark-blue);
+}
+#lock {
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  background-color: var(--dark-blue);
+  border-radius: 50%;
+  margin: 10px auto;
+}
+

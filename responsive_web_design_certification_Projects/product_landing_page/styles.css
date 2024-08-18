@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /*this color selection was copied */
+  background-color: hsl(0, 0%, 93%);
+}
+
+#header-background {
+  background-color: hsl(0, 0%, 93%);
+  height: 80px;
+  padding: 0;
+  position: fixed;
+}
+
+#header {
+  height: 14vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+#nav-bar li {
+  list-style-type: none;
+  padding: 20px;
+}
+
+#nav-bar ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav > ul > li {
+  display: block;
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  font: 1em sans-serif;
+  font-size: 16px;
+  min-width: 12vw;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+form > #email {
+  width: 24vw;
+  padding: 8px;
+  margin: 20px;
+}
+
+form > #submit {
+  width: 12vw;
+  padding: 8px;
+  margin-top: -8px;
+  background-color: rgb(255, 225, 0);
+  border: none;
+  font-weight: 1000;
+  font-size: 15px;
+}
+
+input {
+  display: block;
+}
+
+#features {
+  padding: 30px 0;
+}
+
+#features > div {
+  width: 100%;
+  padding: 20px 10%;
+}
+
+body > div {
+  padding: 80px 0;
+  width: 100%;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 25px;
+  padding: 5px 0;
+}
+
+p {
+  font-size: large;
+}
+
+#how-It-Works {
+  padding: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  border: 1px solid black;
+  width: 280px;
+  height: 50vh;
+  text-align: center;
+  margin: 10px;
+}
+
+#container div {
+  border: none;
+  width: 100%;
+  height: 20%;
+  background-color: rgba(225, 223, 223, 0.967);
+}
+
+#container > #price {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 20px;
+}
+
+#container > p {
+  padding: 4px;
+}
+
+#container > input {
+  padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: rgb(255, 225, 0);
+  border: none;
+  font-size: 15px;
+}
+
+#container div h4 {
+  padding: 20px;
+  font-weight: 800;
+}
+
+#pricing {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+footer {
+  margin: 0 auto;
+  width: 80%;
+  height: 80px;
+  padding: 20px;
+  background-color: rgba(225, 223, 223, 0.967);
+}
+
+footer div {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+footer div p {
+  padding: 10px;
+}
+
+footer > p {
+  text-align: end;
+  color: gray;
+}
+
+@media (max-width: 1000px) {
+  footer {
+    width: 100%;
+  }
+}
