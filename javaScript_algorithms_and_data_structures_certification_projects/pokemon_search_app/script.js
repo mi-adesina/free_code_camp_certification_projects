@@ -1,17 +1,18 @@
 // Get references to DOM elements
-const searchInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
-const pokemonName = document.getElementById("pokemon-name");
-const pokemonId = document.getElementById("pokemon-id");
-const weight = document.getElementById("weight");
-const height = document.getElementById("height");
-const types = document.getElementById("types");
-const hp = document.getElementById("hp");
-const attack = document.getElementById("attack");
-const defense = document.getElementById("defense");
-const specialAttack = document.getElementById("special-attack");
-const specialDefense = document.getElementById("special-defense");
-const speed = document.getElementById("speed");
+const searchInput = document.getElementById("search-input"); // Input field for Pokémon name/ID
+const searchButton = document.getElementById("search-button"); // Button to trigger search
+const pokemonName = document.getElementById("pokemon-name"); // Element to display Pokémon name
+const pokemonId = document.getElementById("pokemon-id"); // Element to display Pokémon ID
+const weight = document.getElementById("weight"); // Element to display Pokémon weight
+const height = document.getElementById("height"); // Element to display Pokémon height
+const types = document.getElementById("types"); // Element to display Pokémon types
+const hp = document.getElementById("hp"); // Element to display Pokémon HP
+const attack = document.getElementById("attack"); // Element to display Pokémon attack stat
+const defense = document.getElementById("defense"); // Element to display Pokémon defense stat
+const specialAttack = document.getElementById("special-attack"); // Element to display Pokémon special attack stat
+const specialDefense = document.getElementById("special-defense"); // Element to display Pokémon special defense stat
+const speed = document.getElementById("speed"); // Element to display Pokémon speed stat
+const avatarDiv = document.getElementById("pokemon-avatar"); // Container for Pokémon image
 
 // Function to fetch data from the Pokémon API
 const fetchData = async (search) => {
@@ -24,6 +25,7 @@ const fetchData = async (search) => {
 
     // Check if the response is okay (status code 200-299)
     if (!res.ok) {
+      alert("Pokémon not found"); // Raise an alert
       throw new Error("Pokémon not found"); // If not, throw an error
     }
 
@@ -48,9 +50,34 @@ const update = async (pokemonData) => {
   height.innerText = `${pokemonData.height}`;
 
   // Get and display the Pokémon's types (e.g., Electric, Water)
-  types.innerText = `${pokemonData.types
-    .map((typeInfo) => typeInfo.type.name.toUpperCase())
-    .join(", ").toUpperCase()}`;
+  let typesText = pokemonData.types
+  .map((typeInfo) => typeInfo.type.name.toUpperCase())
+  .map(word => word.trim());
+  
+  typesText = [...typesText]; // Spread into array for easy usage.
+
+  // console.log(typesText[0 ]); // used for debugging
+  types.innerHTML = ""; // clears the types div element before the next search.
+
+  // looping through typesText so as to update the innerHTML of types.
+  for (let i = 0; i < typesText.length; i++) {
+    types.innerHTML += `<div>${typesText[i]}</div> `
+  }
+
+  let pokemonImageSrc;
+  let pokemonImageAlt;
+
+  //Set the Pokemon image source
+  if (pokemonData.sprites && pokemonData.sprites.front_default) {
+    pokemonImageSrc = pokemonData.sprites.front_default;
+    pokemonImageAlt = pokemonData.name; // Update alt text with the Pokémon's name
+  } else {
+    pokemonImageSrc = ""; // Clear the image if no image is found
+    pokemonImageAlt = "Image not available";
+  }
+
+  // Display the Pokémon image in the avatarDiv
+  avatarDiv.innerHTML = `<img src=${pokemonImageSrc} alt=${pokemonImageAlt} id="sprite">`;
 
   // Get and display the Pokémon's stats (e.g., HP, Attack, Defense)
   hp.innerText = `${
